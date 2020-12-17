@@ -1,3 +1,10 @@
+*** release 20.12.a ***
+
+* STANDALONE: QUEST doesn't depend from RICEDDARIO package anymore.
+
+* SCHRODINGER: this feature is deprecated and no longer mantained.
+
+
 *** release 14.6.a ***
 
 * INTERNALS: the server has been completely re-written. The job control is based on a SQLite database and the number of concurrent threads launched is constant (it depends on the number of threads setted in the conf file). As a consequence this version has no limit about the overall number of jobs submitted. Nevertheless, in order to use this version you will need to install the additional Perl libraries "DBI" and "DBD::SQLite".
