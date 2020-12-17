@@ -35,7 +35,7 @@ SPLASH: {
     my $splash = <<END
 ********************************************************************************
 QUEST - QUEue your ScripT
-release 14.6.a
+release 20.12.a
 
 Copyright (c) 2011-2020, Dario CORRADA <dario.corrada\@gmail.com>
 
@@ -49,7 +49,7 @@ END
 
 USAGE: {
     use Getopt::Long;no warnings;
-    GetOptions($options, 'help|h', 'list|l','threads|n=i', 'killer|k=s', 'schrodinger|s', 'queue|q=s', 'details|d=s' );
+    GetOptions($options, 'help|h', 'list|l','threads|n=i', 'killer|k=s', 'queue|q=s', 'details|d=s' );
     my $usage = <<END
 SYNOPSYS
 
@@ -69,10 +69,6 @@ OPTIONS
   -k <jobid>            kill a job
 
   -d <jobid>            details of a job
-
-  -s                    (DEPRECATED) specify that the job comes from 
-                        Schrondinger Suite, please read the README.txt file in 
-                        order to write a correct script file
 
   -q <fast|slow>        specify the queue type, "fast" jobs have priority over 
                         "slow" jobs(default: slow)
@@ -117,11 +113,6 @@ INIT: {
         }
         if ($options->{'threads'} > $confs{'threads'}) {
             croak(sprintf("\nE- Number of threads required (%d) is higher than allowed (%d)\n\t", $options->{'threads'}, $confs{'threads'}));
-        }
-        if (exists $options->{'schrodinger'}) {
-            $options->{'schrodinger'} = 'true';
-        } else {
-            $options->{'schrodinger'} = 'false';
         }
         if (exists $options->{'queue'}) {
             $options->{'queue'} = 'slow' unless ($options->{'queue'} =~ /(fast|slow)/);

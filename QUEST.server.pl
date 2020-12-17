@@ -64,7 +64,7 @@ SPLASH: {
     my $splash = <<END
 ********************************************************************************
 QUEST - QUEue your ScripT
-release 14.6.a
+release 20.12.a
 
 Copyright (c) 2011-2020, Dario CORRADA <dario.corrada\@gmail.com>
 
