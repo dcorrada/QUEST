@@ -635,7 +635,7 @@ sub init_database {
     $dbobj->new_table(
         'dbh' => $dbh,
         'table' => 'details',
-        'args' => "`jobid` TEXT PRIMARY KEY NOT NULL, `threads` INT NOT NULL, `queue` TEXT NOT NULL, `user` TEXT NOT NULL
+        'args' => "`jobid` TEXT PRIMARY KEY NOT NULL, `threads` INT NOT NULL, `queue` TEXT NOT NULL, `user` TEXT NOT NULL"
     );
     # lista dei job accodati, score è un valore su cui si valuta la priorità dei job
     $dbobj->new_table(
