@@ -1,0 +1,57 @@
+*** release 14.6.a ***
+
+* INTERNALS: the server has been completely re-written. The job control is based on a SQLite database and the number of concurrent threads launched is constant (it depends on the number of threads setted in the conf file). As a consequence this version has no limit about the overall number of jobs submitted. Nevertheless, in order to use this version you will need to install the additional Perl libraries "DBI" and "DBD::SQLite".
+
+* RECOVERING: if the server has been stopped while some jobs are still running and/or queued, these jobs can be automatically restarted on the next launch of the server.
+
+* CLIENT OPTIONS: '-d' option for visualizing details about a job.
+
+*** release 14.5.d ***
+
+* JOB LIST: added queue types (fast|slow) to job priority
+
+* CLIENT OPTIONS: added new option '-q' to the client script
+
+* INTERNALS: improving killing queued jobs
+
+*** release 14.5.c ***
+
+* LOG MESSAGES: in the joblist the PID of the main processes launched is showed (for running jobs only).
+
+* INTERNALS: job killing based on parent pid and not on jobID.
+
+* JOB LIST: job priority is attributed first to thread required and then to submission date
+
+* SCHRODINGER: jobs that come from Schrodinger Suite (ie '-s' option) are delayed in order to retrieve a JobId from Schrodinger's jobcontrol tool.
+
+* SUBMISSION LIMIT: no more than 1,000 jobs can be submitted, afterwards server need to be restarted.
+
+*** release 14.5.b ***
+
+* CLIENT OPTIONS: '-s' option for specifying Schrodinger Suite jobs.
+
+* LOG MESSAGES: start and finish of the jobs are tracked by the server.
+
+* INTERNALS: the scripts are launched by "sudo su [user] -c" sintax.
+
+*** release 14.5.a ***
+
+* INTERNALS: while killing, server looks for child processes only for active 
+  running jobs.
+
+*** release 14.4.a ***
+
+* CLIENT OPTIONS: submitted job can be killed with '-k' option; check of orphan 
+  processes at server shutdown.
+
+* LOG MESSAGES: requests from client are tracked by the server; client prints 
+  quote when ends up.
+
+* CONFIGURATION: the "/etc/QUEST.conf" stores less parameters.
+
+* INTERNALS: the client listens server until receive an over&out signal; jobs 
+  are no longer detached when submitted
+
+*** release 14.4 ***
+
+* INITIAL RELEASE
