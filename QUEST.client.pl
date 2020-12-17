@@ -37,10 +37,9 @@ SPLASH: {
 QUEST - QUEue your ScripT
 release 14.6.a
 
-Copyright (c) 2011-2014, Dario CORRADA <dario.corrada\@gmail.com>
+Copyright (c) 2011-2020, Dario CORRADA <dario.corrada\@gmail.com>
 
-This work is licensed under a Creative Commons
-Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+This work is licensed under  GNU GENERAL PUBLIC LICENSE Version 3.
 ********************************************************************************
 
 END
