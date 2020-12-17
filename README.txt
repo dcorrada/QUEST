@@ -2,13 +2,22 @@
 _The following example of commands are based on script file deposited in the `QUEST/test` folder._
 
 ## 1. REQUIREMENTS
-The followinge Perl modules need to be installed:
+The followinge Perl modules need to be installed through cpan:
 * DBD::SQLite
 * DBI
 * IO::Socket::INET
 * threads
 * threads::shared
 * Thread::Semaphore
+
+The tarballs packages of modules DBI and DBD::SQLite are available in modules directory.
+Modules can be installed manually as follows:
+
+    $ tar -xvfz [path]/QUEST/modules/DBI-1.634.tar.gz
+    $ cd DBI-1.634
+    $ perl Makefile.PL
+    $ make
+    $ make install
 
 ## 2. SERVER STARTUP
 The server script must be launched as super user:
